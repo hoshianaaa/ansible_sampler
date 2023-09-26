@@ -1,16 +1,17 @@
 ---
 - hosts: localhost
   gather_facts: false
-  user: dev
-#  become: true
+#  user: dev
+  become: true
   tasks:
   - name: Copy file
     copy:
-      src: hello.txt
+      src: {{ playbook_dir}}/hello.txt
       dest: /home/dev/
       owner: dev
       group: dev
       mode: '0644' 
+      tags: upload
   #- name: Make Work Directory
   #  file:
   #    path: /home/dev/hello

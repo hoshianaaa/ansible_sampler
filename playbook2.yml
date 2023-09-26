@@ -4,7 +4,7 @@
   tasks:
     - name: ローカルのファイルをリモートにコピー
       copy: 
-        src={{ playbook_dir }}/tmp/test.txt
+        src={{ playbook_dir }}/hello.txt
         dest=/tmp
         owner=root
         group=root
