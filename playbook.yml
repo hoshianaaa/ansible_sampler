@@ -1,7 +1,10 @@
-- name: Make Work Directory
-  file:
-    path: /home/dev/hello
-    state: directory
-    owner: ec2-user
-    group: ec2-user
-    mode: 0755
+---
+- hosts: "127.0.0.1"
+#  become: true
+  tasks:
+  - name: Make Work Directory
+    file:
+      path: /home/dev/hello
+      owner: dev
+      group: dev
+      mode: 0755
