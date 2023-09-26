@@ -11,5 +11,12 @@
         mode=0700
       tags: upload
  
+    - name: execute ping
+      command: "ping 127.0.0.1 -c 4"
+      register: res_ping
+
+    - name: debug ping result
+      debug:
+        msg: "{{ res_ping.stdout_lines[] }}"
 #    - name: Apacheをインストール
 #      yum: name=httpd state=latest
