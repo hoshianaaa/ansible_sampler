@@ -2,6 +2,13 @@
 - hosts: "127.0.0.1"
 #  become: true
   tasks:
+  - name: Copy file
+    copy:
+      src: hello.txt
+      dest: /home/dev/
+      owner: dev
+      group: dev
+      mode: '0644' 
   - name: Make Work Directory
     file:
       path: /home/dev/hello
