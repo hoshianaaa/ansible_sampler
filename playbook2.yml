@@ -4,12 +4,12 @@
   tasks:
     - name: ローカルのファイルをリモートにコピー
       copy: 
-        src={{ playbook_dir }}/hello.txt
-        dest=/tmp
+        src=hello.txt
+        dest=/home/dev
         owner=root
         group=root
         mode=0700
       tags: upload
  
-    - name: Apacheをインストール
-      yum: name=httpd state=latest
+#    - name: Apacheをインストール
+#      yum: name=httpd state=latest
