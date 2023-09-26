@@ -1,0 +1,15 @@
+---
+- hosts: "127.0.0.1"
+  become: true
+  tasks:
+    - name: ローカルのファイルをリモートにコピー
+      copy: 
+        src={{ playbook_dir }}/tmp/test.txt
+        dest=/tmp
+        owner=root
+        group=root
+        mode=0700
+      tags: upload
+ 
+    - name: Apacheをインストール
+      yum: name=httpd state=latest
