@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   gather_facts: false
+  user: dev
 #  become: true
   tasks:
   - name: Copy file
@@ -10,9 +11,9 @@
       owner: dev
       group: dev
       mode: '0644' 
-  - name: Make Work Directory
-    file:
-      path: /home/dev/hello
-      owner: dev
-      group: dev
-      mode: 0755
+  #- name: Make Work Directory
+  #  file:
+  #    path: /home/dev/hello
+  #    owner: dev
+  #    group: dev
+  #    mode: 0755
