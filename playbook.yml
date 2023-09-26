@@ -1,20 +1,15 @@
 ---
-- hosts: localhost
-  gather_facts: false
-#  user: dev
+- hosts: "127.0.0.1"
   become: true
   tasks:
-  - name: Copy file
-    copy:
-      src: {{ playbook_dir}}/hello.txt
-      dest: /home/dev/
-      owner: dev
-      group: dev
-      mode: '0644' 
+    - name: ローカルのファイルをリモートにコピー
+      copy: 
+        src=hello.txt
+        dest=/home/dev
+        owner=root
+        group=root
+        mode=0700
       tags: upload
-  #- name: Make Work Directory
-  #  file:
-  #    path: /home/dev/hello
-  #    owner: dev
-  #    group: dev
-  #    mode: 0755
+ 
+#    - name: Apacheをインストール
+#      yum: name=httpd state=latest
